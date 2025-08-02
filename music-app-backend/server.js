@@ -23,11 +23,9 @@ app.use("/api/album", albumRouter);
 
 app.get("/", (req, res) => res.send("API Working"));
 
-// app.listen(port, () => console.log(`Server started on port ${port}`));
-
 if (process.env.NODE_ENV !== "production") {
   const PORT = process.env.PORT || 4000;
-  server.listen(PORT, () => console.log("Server is running on PORT :" + PORT));
+  app.listen(PORT, () => console.log("Server is running on PORT :" + PORT));
 }
 
 //export srever for vercel
